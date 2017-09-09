@@ -12,6 +12,12 @@ let cats = [];
 		cats = allMyCats;
 	}
 
+	oldCatStore.adoptCat = (catIndex) => {
+		cats[catIndex].ownerId = 2;
+		let myCats = CatStore.getCats();
+		let myOwners = CatStore.getOwners();
+		CatStore.combineArrays(myCats, myOwners);
+	}
 	
 
 	return oldCatStore
