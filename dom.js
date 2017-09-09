@@ -1,1 +1,7 @@
-console.log("hello domjs")
+var CatStore = ((oldCatStore) => {
+
+
+
+
+	return oldCatStore
+})(CatStore || {});
