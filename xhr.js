@@ -2,11 +2,15 @@ var CatStore = ((oldCatStore) => {
 
 	oldCatStore.catLoadWorks = function () {
 		let catData = JSON.parse(this.responseText).cats;
-		console.log("catData", catData);
+		CatStore.setAllCats(catData);
+		CatStore.ownerXHR();
 	}
 	oldCatStore.ownerLoadWorks = function () {
 		let ownersData = JSON.parse(this.responseText).owners;
-		console.log("ownersData", ownersData);
+		CatStore.setAllOwners(ownersData);
+		let catArray = CatStore.getCats();
+		let ownerArray = CatStore.getOwners();
+		CatStore.combineArrays(catArray, ownerArray);
 	}
 	oldCatStore.shitBroke = () => {
 		console.log("Shit!")
