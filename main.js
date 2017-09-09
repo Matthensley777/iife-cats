@@ -1,1 +1,1 @@
-console.log("hello mainjs")
+CatStore.catXHR();

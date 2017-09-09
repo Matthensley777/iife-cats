@@ -27,7 +27,7 @@ var CatStore = ((oldCatStore) => {
 	}
 
 	oldCatStore.combineArrays = (cats, owners) => {
-		cats.forEach((cats) => {
+		cats.forEach((cat) => {
 			owners.forEach((owner) => {
 				if(cat.ownerId === owner.id) {
 					cat.owner = owner.name;
